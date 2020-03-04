@@ -19,6 +19,7 @@ namespace ExcelSheetDifCheck
             {
                 connection.Open();
                 OleDbCommand command = new OleDbCommand("selct * from sheet ", connection);
+                //test
                 //command.Parameters.AddWithValue("@dept", Input.);
                 //command.Parameters.AddWithValue("@dept", dept);
                 //command.Parameters.AddWithValue("@dept", dept);
