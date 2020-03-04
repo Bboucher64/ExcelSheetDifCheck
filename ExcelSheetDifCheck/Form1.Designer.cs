@@ -33,8 +33,8 @@
             this.FilePathLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SheetExpTxt = new System.Windows.Forms.TextBox();
+            this.SheetConTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.RangeHighTxt = new System.Windows.Forms.TextBox();
@@ -43,11 +43,11 @@
             this.SelectFileBtn = new System.Windows.Forms.Button();
             this.RunCheckBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DisplayDgv = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisplayDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,8 +66,8 @@
             this.tabPage1.Controls.Add(this.FilePathLbl);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.SheetExpTxt);
+            this.tabPage1.Controls.Add(this.SheetConTxt);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.RangeHighTxt);
@@ -110,19 +110,19 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Sheet Control";
             // 
-            // textBox1
+            // SheetExpTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 248);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.SheetExpTxt.Location = new System.Drawing.Point(158, 248);
+            this.SheetExpTxt.Name = "SheetExpTxt";
+            this.SheetExpTxt.Size = new System.Drawing.Size(100, 20);
+            this.SheetExpTxt.TabIndex = 20;
             // 
-            // textBox2
+            // SheetConTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 212);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 19;
+            this.SheetConTxt.Location = new System.Drawing.Point(158, 212);
+            this.SheetConTxt.Name = "SheetConTxt";
+            this.SheetConTxt.Size = new System.Drawing.Size(100, 20);
+            this.SheetConTxt.TabIndex = 19;
             // 
             // label2
             // 
@@ -164,6 +164,7 @@
             this.DisplayBtn.TabIndex = 14;
             this.DisplayBtn.Text = "Display";
             this.DisplayBtn.UseVisualStyleBackColor = true;
+            this.DisplayBtn.Click += new System.EventHandler(this.DisplayBtn_Click);
             // 
             // SelectFileBtn
             // 
@@ -183,10 +184,11 @@
             this.RunCheckBtn.TabIndex = 12;
             this.RunCheckBtn.Text = "RUN CHECK";
             this.RunCheckBtn.UseVisualStyleBackColor = true;
+            this.RunCheckBtn.Click += new System.EventHandler(this.RunCheckBtn_Click);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.DisplayDgv);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -195,14 +197,14 @@
             this.tabPage2.Text = "Output";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DisplayDgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(786, 418);
-            this.dataGridView1.TabIndex = 0;
+            this.DisplayDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DisplayDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DisplayDgv.Location = new System.Drawing.Point(3, 3);
+            this.DisplayDgv.Name = "DisplayDgv";
+            this.DisplayDgv.Size = new System.Drawing.Size(786, 418);
+            this.DisplayDgv.TabIndex = 0;
             // 
             // Form1
             // 
@@ -216,7 +218,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisplayDgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,8 +231,8 @@
         private System.Windows.Forms.Label FilePathLbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox SheetExpTxt;
+        private System.Windows.Forms.TextBox SheetConTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox RangeHighTxt;
@@ -238,7 +240,7 @@
         private System.Windows.Forms.Button DisplayBtn;
         private System.Windows.Forms.Button SelectFileBtn;
         private System.Windows.Forms.Button RunCheckBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DisplayDgv;
     }
 }
 
