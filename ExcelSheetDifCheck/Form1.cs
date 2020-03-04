@@ -12,18 +12,29 @@ namespace ExcelSheetDifCheck
 {
     public partial class Form1 : Form
     {
+        InputModel Input = new InputModel();
+
         public Form1()
         {
             InitializeComponent();
         }
-
         private void SelectFileBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                TxtCurrentstring.Text = ofd.FileName;
+                Input.FilePath = ofd.FileName;
             }
+            FilePathLbl.Text = Input.FilePath;
+        }
+
+        private void RunCheckBtn_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void DisplayBtn_Click(object sender, EventArgs e)
+        {
+            DisplayDgv.DataSource=ExcelQueries.CallExcel(Input);
         }
     }
 }
