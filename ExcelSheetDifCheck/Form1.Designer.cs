@@ -167,7 +167,7 @@
             // 
             // SelectFileBtn
             // 
-            this.SelectFileBtn.Location = new System.Drawing.Point(20, 18);
+            this.SelectFileBtn.Location = new System.Drawing.Point(82, 21);
             this.SelectFileBtn.Name = "SelectFileBtn";
             this.SelectFileBtn.Size = new System.Drawing.Size(145, 43);
             this.SelectFileBtn.TabIndex = 13;
