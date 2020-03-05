@@ -12,22 +12,22 @@ namespace ExcelSheetDifCheck
     {
         public static DataTable CallExcel(InputModel Input)
         {
-            Alpha.conn = "Excel File=C:\\"+Input.FilePath;
+            Alpha.conn = "Provider=Microsoft.ACE.OLEDB.12.0;" +
+                         "Data Source='" + Input.FilePath +
+                         "';Extended Properties=\"Excel 12.0;HDR=YES;\"";
 
             DataTable dtTables = new DataTable();
             using (OleDbConnection connection = new OleDbConnection(Alpha.conn))
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand("selct * from sheet ", connection);
-                //test
+                OleDbCommand command = new OleDbCommand("SELECT * FROM [" + Input.SheetCon + "$]", connection);
                 //command.Parameters.AddWithValue("@dept", Input.);
-                //command.Parameters.AddWithValue("@dept", dept);
-                //command.Parameters.AddWithValue("@dept", dept);
-                //command.Parameters.AddWithValue("@dept", dept);
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
-                // adapter.FillSchema(ds
+                adapter.SelectCommand = command;
                 adapter.Fill(dtTables);
+
                 return dtTables;
+
             }
         }
     }
