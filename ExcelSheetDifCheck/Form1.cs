@@ -28,12 +28,14 @@ namespace ExcelSheetDifCheck
             FilePathLbl.Text = Input.FilePath;
         }
 
+
         private void RunCheckBtn_Click(object sender, EventArgs e)
         {
         }
 
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
+            Input.SheetCon = SheetConTxt.Text;
             DisplayDgv.DataSource=ExcelQueries.CallExcel(Input);
         }
     }
