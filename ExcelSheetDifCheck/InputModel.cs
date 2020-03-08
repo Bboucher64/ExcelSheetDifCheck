@@ -13,6 +13,6 @@ namespace ExcelSheetDifCheck
         public string RangeHigh { get; set; }
         public string SheetCon { get; set; }
         public string SheetExp { get; set; }
-
+        public List<string> workSheets = new List<string>();
     }
 }

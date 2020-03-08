@@ -26,17 +26,32 @@ namespace ExcelSheetDifCheck
                 Input.FilePath = ofd.FileName;
             }
             FilePathLbl.Text = Input.FilePath;
+            FillConSheetCmbBox(Input);
+            FillExpSheetCmbBox(Input);
         }
-
-
-        private void RunCheckBtn_Click(object sender, EventArgs e)
-        {
-        }
-
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
-            Input.SheetCon = SheetConTxt.Text;
-            DisplayDgv.DataSource=ExcelQueries.CallExcel(Input);
+            Input.SheetCon = SheetConCmb.Text;
+            Input.SheetExp = SheetExpCmb.Text;
+            DisplayDgv.DataSource= ComparingLogic.Start(ExcelQueries.GenerateTablesFromExcel(Input));
+        }
+        private void FillConSheetCmbBox(InputModel Input)
+        {
+            Input.workSheets = ExcelQueries.GetSheets(Input);
+            SheetConCmb.Items.Clear();
+            foreach (string Sheet in Input.workSheets)
+            {
+                SheetConCmb.Items.Add(Sheet);
+            }
+        }
+        private void FillExpSheetCmbBox(InputModel Input)
+        {
+            Input.workSheets = ExcelQueries.GetSheets(Input);
+            SheetExpCmb.Items.Clear();
+            foreach (string Sheet in Input.workSheets)
+            {
+                SheetExpCmb.Items.Add(Sheet);
+            }
         }
     }
 }
